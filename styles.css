@@ -155,3 +155,87 @@ header p{
     cursor: pointer;
     transition: all 0.2s;
 }
+
+.todo-checkbox:checked + .checkmark{
+    background-color: var(--success);
+    border-color: var(--success);
+}
+
+.todo-checkbox:checked + .checkmark::after{
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.todo-item-text{
+    flex: 1;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.todo-item.completed .todo-item-text{
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+.delete-btn{
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.todo-item:hover .delete-btn{
+    opacity: 1;
+}
+
+.delete-btn:hover{
+    color: var(--danger);
+}
+
+.empty-state{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-top: 1px solid var(--border);
+    background-color: var(--light);
+    font-size: 14px;
+}
+
+#items-left{
+    color: var(--gray);
+}
+
+#clear-completed{
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#clear-completed:hover{
+    color: var(--danger);
+}
